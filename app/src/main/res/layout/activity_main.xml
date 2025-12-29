@@ -5,71 +5,53 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="#000000"
-    android:padding="20dp">
+    android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NEXUS AUDIT ENGINE"
+        android:text="NEXUS BENCHMARK"
         android:textColor="#FFFFFF"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="20dp"/>
 
     <TextView
         android:id="@+id/cpu_pts_display"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CPU Pts: Ready"
+        android:text="CPU: Ready"
         android:textColor="#00FF00"
-        android:textSize="20sp"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:layout_marginBottom="10dp"/>
+        android:textSize="18sp"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/gpu_fps_display"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GPU FPS: Ready"
+        android:text="GPU: Ready"
         android:textColor="#00FFFF"
-        android:textSize="20sp"
-        android:fontFamily="monospace"
+        android:textSize="18sp"
         android:gravity="center"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="20dp"/>
 
     <Button
         android:id="@+id/btn_launch"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:text="LAUNCH FULL AUDIT"
-        android:textSize="20sp"
-        android:backgroundTint="#FF3D00"
-        android:textColor="#FFFFFF" />
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="LAUNCH FULL LOAD"
+        android:backgroundTint="#D32F2F"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"/>
 
     <LinearLayout
         android:id="@+id/game_canvas_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="30dp"
-        android:background="#1A1A1A"
-        android:gravity="center"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="GPU Game Canvas"
-            android:textColor="#333333"
-            android:textSize="18sp"/>
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Architecture: ARMv9.2-A (Snapdragon 8 Gen 3)"
-        android:textColor="#555555"
-        android:textSize="12sp" />
+        android:background="#222222"
+        android:orientation="vertical">
+        </LinearLayout>
 
 </LinearLayout>
