@@ -24,7 +24,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: 4. 自动补全缺失的二进制 Jar 文件
-        # 这行命令会利用服务器自带的环境，自动生成 gradle-wrapper.jar
+        # 这行命令会利服务器自带的环境，自动生成 gradle-wrapper.jar
         run: gradle wrapper --gradle-version 8.2
 
       - name: 5. 开启全局审计引擎编译
