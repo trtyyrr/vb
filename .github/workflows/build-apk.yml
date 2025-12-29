@@ -1,0 +1,42 @@
+name: NEXUS_EXTREME_COMPILER
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. 拉取 Git 仓库代码
+        uses: actions/checkout@v4
+
+      - name: 2. 配置 Java 环境 (编译 Java/Kotlin)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: 3. 安装 Android NDK (编译 C++/汇编)
+        # 骁龙 8 Gen 3 建议使用 NDK r25 或更高版本
+        run: |
+          echo "y" | sudo ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --install "ndk;25.2.9519653"
+
+      - name: 4. 授予构建权限
+        run: chmod +x gradlew
+
+      - name: 5. 执行全局编译
+        # 该命令会同时做两件事：
+        # A. 调用 CMake/NDK 编译 native-lib.cpp 里的汇编机器码
+        # B. 调用 javac/R8 编译 MainActivity.java 和 XML 布局
+        run: ./gradlew assembleDebug
+
+      - name: 6. 导出最终生成的 APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Nexus_8Gen3_Audit_Tool
+          path: app/build/outputs/apk/debug/app-debug.apk
