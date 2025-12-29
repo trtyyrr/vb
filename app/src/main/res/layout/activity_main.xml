@@ -8,23 +8,40 @@
     android:padding="20dp">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEXUS AUDIT ENGINE"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp"/>
+
+    <TextView
         android:id="@+id/pts_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="READY TO AUDIT"
+        android:text="Ready to Audit"
         android:textColor="#00FF00"
-        android:textSize="45sp"
-        android:textStyle="bold"
-        android:fontFamily="monospace" />
+        android:textSize="22sp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"/>
 
     <Button
         android:id="@+id/btn_launch"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginTop="30dp"
-        android:text="LAUNCH ASM CORE"
-        android:backgroundTint="#FF0000"
-        android:textSize="25sp"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:text="LAUNCH ASSEMBLY"
+        android:textSize="20sp"
+        android:backgroundTint="#FF3D00"
         android:textColor="#FFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Architecture: ARMv9.2-A (Snapdragon 8 Gen 3)"
+        android:textColor="#555555"
+        android:textSize="12sp" />
 
 </LinearLayout>
