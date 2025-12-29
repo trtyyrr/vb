@@ -1,3 +1,7 @@
+plugins {
+    id 'com.android.application'
+}
+
 android {
     namespace 'com.nexus.audit'
     compileSdk 34
@@ -11,7 +15,7 @@ android {
 
         externalNativeBuild {
             cmake {
-                // 确保 NDK 编译参数正确
+                // 核心：针对骁龙 8 Gen 3 的最高性能优化
                 cppFlags "-O3 -march=armv8.5-a+sve+sve2"
             }
         }
@@ -20,22 +24,19 @@ android {
         }
     }
 
-    // --- 重点：加入以下这段代码 ---
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    // --------------------------
 
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
         }
     }
-    
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
-    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
 }
