@@ -1,8 +1,3 @@
-// app/build.gradle 头部必须这样写
-plugins {
-    id 'com.android.application'
-}
-
 android {
     namespace 'com.nexus.audit'
     compileSdk 34
@@ -16,7 +11,7 @@ android {
 
         externalNativeBuild {
             cmake {
-                // 确保这里的参数没有多余的换行符
+                // 确保 NDK 编译参数正确
                 cppFlags "-O3 -march=armv8.5-a+sve+sve2"
             }
         }
@@ -25,13 +20,19 @@ android {
         }
     }
 
+    // --- 重点：加入以下这段代码 ---
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // --------------------------
+
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
         }
     }
     
-    // 增加这一段，确保编译能找到 Java 代码
     buildTypes {
         release {
             minifyEnabled false
