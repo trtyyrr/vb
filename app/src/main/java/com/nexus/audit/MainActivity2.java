@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
 
-public class MainActivity extends Activity {
+public class MainActivity2 extends Activity {
     static { System.loadLibrary("nexus_audit"); }
 
     // 定义 JNI 接口
