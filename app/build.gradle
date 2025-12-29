@@ -1,0 +1,19 @@
+android {
+    namespace 'com.nexus.audit'
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.nexus.audit"
+        minSdk 26
+        targetSdk 34
+        externalNativeBuild {
+            cmake {
+                // 强制开启 ARMv9-A 特性加速
+                cppFlags "-O3 -march=armv8.5-a+sve+sve2 -mvectorize-with-setup-queries"
+            }
+        }
+        ndk { abiFilters "arm64-v8a" }
+    }
+    externalNativeBuild {
+        cmake { path "src/main/cpp/CMakeLists.txt" }
+    }
+}
