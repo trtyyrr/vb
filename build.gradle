@@ -1,10 +1,13 @@
-// 根目录 build.gradle (极简版)
+// 根目录 build.gradle (最终修正版)
 buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
     dependencies {
-        // 保持这个版本即可
+        // 这是告诉 Gradle 怎么编译安卓项目的核心插件
         classpath 'com.android.tools.build:gradle:8.2.0'
     }
 }
 
-// 删掉原来的 allprojects { repositories { ... } } 块
-// 因为已经在 settings.gradle 里统一配置过了
+// 保持这里为空，不要写 allprojects { ... }
