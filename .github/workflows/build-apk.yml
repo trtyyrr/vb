@@ -27,7 +27,7 @@ jobs:
         # 这行命令会利服务器自带的环境，自动生成 gradle-wrapper.jar
         run: gradle wrapper --gradle-version 8.2
 
-      - name: 5. 开启全局审计引擎编译
+      - name: 5. 开启7891全局审计引擎编译
         # 这一步会同时编译你的 C++ 汇编代码和 Java 按钮界面
         run: ./gradlew assembleDebug
 
