@@ -1,0 +1,22 @@
+// 根目录下的 build.gradle
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // 这是构建工具的版本
+        classpath 'com.android.tools.build:gradle:8.2.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
