@@ -10,7 +10,7 @@ import android.view.View;
 public class MainActivity2 extends Activity {
     static { System.loadLibrary("nexus_audit"); }
 
-    // 定义 JNI 接口
+    // 定义 JNI 接口7891
     private native void startAudit(int threads);
     private native long getPts();
 
