@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#000000"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/pts_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="READY TO AUDIT"
+        android:textColor="#00FF00"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace" />
+
+    <Button
+        android:id="@+id/btn_launch"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="30dp"
+        android:text="LAUNCH ASM CORE"
+        android:backgroundTint="#FF0000"
+        android:textSize="25sp"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
