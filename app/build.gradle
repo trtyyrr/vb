@@ -1,19 +1,40 @@
+// app/build.gradle 头部必须这样写
+plugins {
+    id 'com.android.application'
+}
+
 android {
     namespace 'com.nexus.audit'
     compileSdk 34
+
     defaultConfig {
         applicationId "com.nexus.audit"
         minSdk 26
         targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
         externalNativeBuild {
             cmake {
-                // 强制开启 ARMv9-A 特性加速
-                cppFlags "-O3 -march=armv8.5-a+sve+sve2 -mvectorize-with-setup-queries"
+                // 确保这里的参数没有多余的换行符
+                cppFlags "-O3 -march=armv8.5-a+sve+sve2"
             }
         }
-        ndk { abiFilters "arm64-v8a" }
+        ndk {
+            abiFilters "arm64-v8a"
+        }
     }
+
     externalNativeBuild {
-        cmake { path "src/main/cpp/CMakeLists.txt" }
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
+    
+    // 增加这一段，确保编译能找到 Java 代码
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
     }
 }
